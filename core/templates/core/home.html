@@ -1,0 +1,248 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load core_tags %}
+{% block title %}
+    مهدی پورپیرعلی | Junior Web Developer
+{% endblock %}
+{% block meta_description %}
+    وب‌ سایت شخصی مهدی پورپیرعلی، توسعه‌ دهنده جونیور وب با تمرکز بر Python، Django، HTML، CSS و JavaScript و علاقه ‌مند
+    به ساخت پروژه‌ های واقعی وب.
+{% endblock %}
+{% block extra_head %}
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Mahdi PPA",
+            "alternateName": "مهدی پورپیرعلی",
+            "url": "{{ request.scheme }}://{{ request.get_host }}"
+}
+    </script>
+{% endblock %}
+
+{% block content %}
+    <div id="contact-message" class="contact-message"></div>
+    <section class="hero page-enter">
+        <div class="hero-content">
+            <p class="greeting">سلام👋 من</p>
+            <h1>مهدی پورپیرعلی هستم.</h1>
+            <div class="hero-animated-text">
+
+                <h2 id="animated-title"></h2>
+
+                <p id="animated-description" class="hero-description"></p>
+
+            </div>
+            <div class="hero-buttons">
+                <a href="{% url 'projects' %}">مشاهده پروژه ها</a>
+                <a href="{% url 'contact' %}">تماس با من</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="{{ about_page.profile_image.url }}" alt="مهدی پورپیرعلی">
+        </div>
+
+    </section>
+    {% if work_status %}
+        <section class="work-status-section">
+            <div class="work-status-container">
+                <div class="status-lamp status-{{ work_status.status }}">
+                    <svg viewBox="0 0 64 64" aria-hidden="true">
+
+                        <path
+                                class="lamp-bulb"
+                                d="M32 8C21.5 8 13 16.5 13 27c0 7.2 3.8 13.2 9.5 16.9
+               2.1 1.4 3.5 3.7 3.5 6.1h12c0-2.4 1.4-4.7 3.5-6.1
+               C47.2 40.2 51 34.2 51 27 51 16.5 42.5 8 32 8z">
+                        </path>
+
+                        <path
+                                class="lamp-base"
+                                d="M26 50h12M27 55h10">
+                        </path>
+
+                        <circle
+                                class="lamp-glow"
+                                cx="32"
+                                cy="27"
+                                r="24">
+                        </circle>
+
+                    </svg>
+                </div>
+
+                <div class="work-status-content">
+
+            <span class="status-label">
+                وضعیت فعلی من
+            </span>
+
+                    <h2 id="work-status-title">
+                        {{ work_status.get_status_display }}
+                    </h2>
+
+                    {% if work_status.message %}
+                        <p id="work-status-message">
+                            {{ work_status.message }}
+                        </p>
+                    {% endif %}
+
+                </div>
+
+            </div>
+        </section>
+    {% endif %}
+
+    <section class="about-me">
+
+        <h2>درباره من</h2>
+        <p>{{ about_me.description|persian_digits }}</p>
+        <a href="{% static 'core/files/MyResume.pdf' %}" download class="resume-download-btn">
+            دانلود رزومه
+        </a>
+    </section>
+
+    <section class="skills">
+        <h2>مهارت های من</h2>
+        {% for category in categories %}
+            <div class="skill-category">
+                <h3>{{ category.name }}</h3>
+                <div class="skills-container">
+                    {% for skill in category.skills.all %}
+                        {% if skill.displayStatus %}
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <img
+                                            src="{{ skill.skill_image.url }}"
+                                            alt="{{ skill.title }}">
+                                </div>
+
+                                <span>{{ skill.title }}</span>
+
+                            </div>
+                        {% endif %}
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+        {% endfor %}
+
+
+    </section>
+
+    <section class="projects-section">
+
+        <h2>پروژه‌ های منتخب</h2>
+
+        <div class="projects-container">
+
+            {% for project in featured_projects %}
+
+                <article class="project-card">
+
+                    <div class="project-image">
+                        <picture>
+                            <source
+                                    media="(max-width: 768px)"
+                                    srcset="{{ project.cover_mobile.url }}"
+                            >
+
+                            <img
+                                    src="{{ project.cover_desktop.url }}"
+                                    alt="{{ project.title }}"
+                            >
+                        </picture>
+                    </div>
+
+                    <div class="project-content">
+
+                        <h3>{{ project.title }}</h3>
+
+                        <p>
+                            {{ project.short_description }}
+                        </p>
+
+                        <a href="{% url 'project_detail' project.slug %}">
+                            مشاهده پروژه
+                        </a>
+
+                    </div>
+
+                </article>
+
+            {% empty %}
+
+                <p>هنوز پروژه‌ای برای نمایش وجود ندارد.</p>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+    <section class="contact-section">
+
+        <h2>تماس با من</h2>
+
+        <p class="contact-description">
+            اگر سوالی دارید یا مایل به همکاری هستید، خوشحال می‌شوم پیام شما را دریافت کنم.
+        </p>
+        <form method="post" class="contact-form" id="contact-form">
+            {% csrf_token %}
+
+            <div class="form-error" id="form-error"></div>
+            <div class="form-group">
+                <label for="{{ form.name.id_for_label }}">
+                    نام
+                </label>
+                {{ form.name }}
+                {{ form.name.errors }}
+            </div>
+
+            <div class="contact-methods">
+
+                <div class="form-group">
+                    <label for="{{ form.email.id_for_label }}">
+                        ایمیل
+                    </label>
+                    {{ form.email }}
+                    <div class="field-error" id="email-error"></div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="{{ form.phone.id_for_label }}">
+                        شماره موبایل
+                    </label>
+                    {{ form.phone }}
+                    <div class="field-error" id="phone-error"></div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.subject.id_for_label }}">
+                    موضوع
+                </label>
+                {{ form.subject }}
+                {{ form.subject.errors }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.message.id_for_label }}">
+                    پیام
+                </label>
+                {{ form.message }}
+                {{ form.message.errors }}
+            </div>
+
+            <button type="submit" class="contact-submit">
+                ارسال پیام
+            </button>
+
+        </form>
+
+    </section>
+{% endblock %}
