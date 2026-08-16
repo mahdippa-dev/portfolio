@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load core_tags %}
+{% block title %}
+    {{ project.title }} | مهدی پورپیرعلی
+{% endblock %}
+{% block meta_description %}
+    {{ project.short_description }}
+{% endblock %}
+{% block og_title %}
+    {{ project.title }} | مهدی پورپیرعلی
+{% endblock %}
+
+{% block og_description %}
+    {{ project.short_description }}
+{% endblock %}
+{% block og_image %}
+    {{ request.scheme }}://{{ request.get_host }}{{ project.cover_desktop.url }}
+{% endblock %}
+{% block content %}
+
+    <section class="project-detail page-enter">
+
+        <div class="project-detail-header">
+
+            <h1>
+                {{ project.title }}
+            </h1>
+
+            <p>
+                {{ project.short_description }}
+            </p>
+
+        </div>
+
+
+        <div class="project-detail-cover">
+
+            <picture>
+
+                <source
+                        media="(max-width: 768px)"
+                        srcset="{{ project.cover_mobile.url }}"
+                >
+
+                <img
+                        src="{{ project.cover_desktop.url }}"
+                        alt="{{ project.title }}"
+                >
+
+            </picture>
+
+        </div>
+
+
+        <div class="project-detail-content">
+
+            {{ project.description|persian_digits|safe }}
+
+        </div>
+
+        <div class="project-detail-actions">
+
+            {% if project.github_link %}
+                <a
+                        href="{{ project.github_link }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-btn project-btn-github"
+                >
+                    GitHub
+                </a>
+            {% endif %}
+
+
+            {% if project.live_link %}
+                <a
+                        href="{{ project.live_link }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-btn project-btn-live"
+                >
+                    مشاهده سایت
+                </a>
+            {% endif %}
+
+        </div>
+
+    </section>
+
+{% endblock %}

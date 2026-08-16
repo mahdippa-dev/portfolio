@@ -1,0 +1,116 @@
+.skills-page {
+
+    max-width: 1100px;
+    margin: 100px auto;
+    padding: 0 20px;
+}
+
+.skills-page-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.skills-page-header h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.skills-page-header p {
+    color: #9ca3af;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.skills-page .skill-category {
+
+    margin-bottom: 50px;
+    padding: 30px;
+    background: #0f172a;
+    border: 1px solid #2d3748;
+    border-radius: 24px;
+}
+
+.skill-category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.skill-category-header h2 {
+
+    color: #3b82f6;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+
+.skill-category-header p {
+    color: #9ca3af;
+    line-height: 1.8;
+    direction: rtl;
+}
+
+.skill-count {
+    direction: rtl;
+    flex-shrink: 0;
+    padding: 7px 12px;
+    border-radius: 20px;
+    background: #1f2937;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+.skills-grid {
+    direction: ltr;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.skills-page .skill-card {
+
+    min-height: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background: #111827;
+    border: 1px solid #2d3748;
+    border-radius: 18px;
+    transition: transform 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-7px);
+    border-color: #3b82f6;
+    background: #162033;
+}
+
+.skill-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    transition: transform 0.3s ease;
+}
+
+.skill-icon img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.skill-card:hover .skill-icon {
+    transform: scale(1.05);
+}
+
+.skill-card h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0;
+}

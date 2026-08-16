@@ -1,0 +1,230 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+            rel="icon"
+            type="image/png"
+            href="{% static 'core/icons/favicon.png' %}"
+    >
+    <meta name="theme-color" content="#111827">
+    <title>{% block title %}        مهدی پورپیرعلی | Junior Backend Developer
+    {% endblock %}</title>
+    <meta
+            name="description"
+            content="{% block meta_description %}مهدی پورپیرعلی، توسعه‌دهنده جونیور Python و Django، علاقه‌مند به ساخت پروژه‌های واقعی و در مسیر تبدیل شدن به یک Full-Stack Developer.{% endblock %}"
+    >
+    <meta property="og:type" content="website">
+
+    <meta
+            property="og:title"
+            content="{% block og_title %}مهدی پورپیرعلی | Junior Web Developer{% endblock %}"
+    >
+
+    <meta
+            property="og:description"
+            content="{% block og_description %}وب‌سایت شخصی مهدی پورپیرعلی، توسعه‌دهنده جونیور وب با تمرکز بر Python، Django، HTML، CSS و JavaScript.{% endblock %}"
+    >
+
+    <meta
+            property="og:url"
+            content="{{ request.build_absolute_uri }}"
+    >
+
+    <meta
+            property="og:image"
+            content="{% block og_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'core/images/logo/logo.png' %}{% endblock %}"
+    >
+    <meta property="og:site_name" content="Mahdi PPA">
+
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ request.build_absolute_uri }}">
+    <link rel="stylesheet" href="{% static 'core/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/projects_list.css' %}">
+    <link rel="stylesheet" href="{% static 'about/css/about.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/skills.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/contact_common.css' %}">
+    <link rel="stylesheet" href="{% static 'contact/css/contact_page.css' %}">
+    <link rel="stylesheet" href="{% static 'projects/css/project_detail.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/errors.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/responsive.css' %}">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "مهدی پورپیرعلی",
+            "url": "{{ request.scheme }}://{{ request.get_host }}",
+    "jobTitle": "Junior Web Developer",
+    "knowsAbout": [
+        "Python",
+        "Django",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "PostgreSQL",
+        "Web Development"
+    ],
+    "sameAs": [
+        "{{ footer_info.github_link }}",
+        "{{ footer_info.linkedin_link }}"
+        {% if footer_info.instagram_link %},
+        "{{ footer_info.instagram_link }}"
+        {% endif %}
+        {% if footer_info.telegram_link %},
+        "{{ footer_info.telegram_link }}"
+    {% endif %}
+        ]
+    }
+    </script>
+
+    {% block extra_head %}{% endblock %}
+
+</head>
+<body>
+<header class="header">
+    <nav class="navbar">
+        <a class="logo" href="{% url 'home' %}">
+            <img src="{% static 'core/images/logo/logo.png' %}" alt="Mahdi PPA">
+        </a>
+        <ul class="nav-links">
+            <li><a href="{% url 'home' %}">خانه</a></li>
+            <li><a href="{% url 'about' %}">درباره من</a></li>
+            <li><a href="{% url 'projects' %}">پروژه ها</a></li>
+            <li><a href="{% url 'skills' %}">مهارت ها</a></li>
+            <li><a href="{% url 'contact' %}">تماس</a></li>
+        </ul>
+        <div class="action">
+            <button class="menu-toggle" id="menu-toggle" aria-label="باز کردن منو" aria-expanded="false">
+                ☰
+            </button>
+        </div>
+    </nav>
+
+</header>
+<aside class="mobile-menu" id="mobile-menu">
+
+    <div class="mobile-menu-header">
+
+        <span>منو</span>
+
+        <button
+                class="menu-close"
+                id="menu-close"
+                aria-label="بستن منو"
+        >
+            ×
+        </button>
+
+    </div>
+
+    <nav class="mobile-nav">
+
+        <a href="{% url 'home' %}">
+            خانه
+        </a>
+
+        <a href="{% url 'about' %}">
+            درباره من
+        </a>
+
+        <a href="{% url 'projects' %}">
+            پروژه‌ها
+        </a>
+
+        <a href="{% url 'skills' %}">
+            مهارت‌ها
+        </a>
+
+        <a href="{% url 'contact' %}">
+            تماس
+        </a>
+
+    </nav>
+
+</aside>
+
+
+<div
+        class="menu-overlay"
+        id="menu-overlay"
+></div>
+{% block content %}
+
+{% endblock %}
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-info">
+            <h2>{{ footer_info.name }}</h2>
+            <p>{{ footer_info.description }}</p>
+        </div>
+
+        <div class="footer-links">
+
+            <h3>ارتباط با من</h3>
+
+            <div class="social-links">
+                <a href="{{ footer_info.github_link }}"
+                   target="_blank"
+                   aria-label="GitHub">
+                    <img src="{% static 'core/icons/github.svg' %}" alt="">
+                </a>
+
+                <a href="{{ footer_info.linkedin_link }}"
+                   target="_blank"
+                   aria-label="LinkedIn">
+                    <img src="{% static 'core/icons/linkedin.svg' %}" alt="">
+                </a>
+                {% if footer_info.email %}
+                    <a href="mailto:{{ footer_info.email }}" target="_blank" aria-label="Email">
+                        <img src="{% static 'core/icons/email.svg' %}" alt="">
+                    </a>
+                {% endif %}
+                {% if footer_info.instagram_link %}
+                    <a href="{{ footer_info.instagram_link }}"
+                       target="_blank"
+                       aria-label="Instagram">
+                        <img src="{% static 'core/icons/instagram.svg' %}" alt="">
+                    </a>
+                {% endif %}
+
+                {% if footer_info.telegram_link %}
+                    <a href="{{ footer_info.telegram_link }}"
+                       target="_blank"
+                       aria-label="Telegram">
+                        <img src="{% static 'core/icons/telegram.svg' %}" alt="">
+                    </a>
+                {% endif %}
+
+                {% if footer_info.iranian_social_link %}
+                    <a href="{{ footer_info.iranian_social_link }}"
+                       target="_blank"
+                       aria-label="شبکه اجتماعی داخلی">
+                        <!-- آیکون سرویس ایرانی را بعداً اینجا می‌گذاریم -->
+                    </a>
+                {% endif %}
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p> {{ footer_info.name }}. تمامی حقوق محفوظ است.© 2026</p>
+    </div>
+
+</footer>
+<script src="{% static 'core/js/menu.js' %}"></script>
+<script src="{% static 'core/js/contact.js' %}"></script>
+</body>
+</html>

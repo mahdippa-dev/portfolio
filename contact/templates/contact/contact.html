@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    تماس با من | مهدی پورپیرعلی
+{% endblock %}
+{% block meta_description %}
+    راه‌های ارتباط با مهدی پورپیرعلی برای همکاری، پیشنهاد پروژه و ارتباط حرفه‌ای.
+{% endblock %}
+{% block og_title %}
+    تماس با من | مهدی پورپیرعلی
+{% endblock %}
+
+{% block og_description %}
+    راه‌های ارتباط با مهدی پورپیرعلی برای همکاری، پیشنهاد پروژه و ارتباط حرفه‌ای.
+{% endblock %}
+{% block content %}
+    <div id="contact-message" class="contact-message"></div>
+
+    <section class="contact-page page-enter">
+
+        <div class="contact-page-header">
+
+            <h1>تماس با من</h1>
+
+            <p>
+                اگر سوالی دارید یا مایل به همکاری هستید،
+                خوشحال می‌شوم پیام شما را دریافت کنم.
+            </p>
+
+        </div>
+
+
+        <div class="contact-page-info">
+
+            <div class="contact-page-item">
+
+                <span>گیت هاب:</span>
+
+                <a
+                        href="{{ footer_info.github_link }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+
+                >
+                    GitHub
+                </a>
+
+            </div>
+
+
+            <div class="contact-page-item">
+
+                <span>لینکدین:</span>
+
+                <a
+                        href="{{ footer_info.linkedin_link }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+
+                >
+                    LinkedIn
+                </a>
+
+            </div>
+
+
+            {% if footer_info.instagram_link %}
+
+                <div class="contact-page-item">
+
+                    <span>Instagram</span>
+
+                    <a
+                            href="{{ footer_info.instagram_link }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                    >
+                        Instagram
+                    </a>
+
+                </div>
+
+            {% endif %}
+
+
+            {% if footer_info.telegram_link %}
+
+                <div class="contact-page-item">
+
+                    <span>تلگرام:</span>
+
+                    <a
+                            href="{{ footer_info.telegram_link }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                    >
+                        Telegram
+                    </a>
+
+                </div>
+
+            {% endif %}
+
+        </div>
+
+
+        <div class="contact-page-form">
+
+            <h2>پیام خود را ارسال کنید</h2>
+
+
+            <form
+                    method="post"
+                    id="contact-form"
+                    class="contact-form"
+            >
+
+                {% csrf_token %}
+
+                <div
+                        id="form-error"
+                        class="form-error"
+                ></div>
+
+
+                <div class="form-group">
+
+                    <label for="{{ form.name.id_for_label }}">
+                        نام
+                    </label>
+
+                    {{ form.name }}
+
+                </div>
+
+
+                <div class="contact-methods">
+
+                    <div class="form-group">
+
+                        <label for="{{ form.email.id_for_label }}">
+                            ایمیل
+                        </label>
+
+                        {{ form.email }}
+
+                        <div
+                                id="email-error"
+                                class="field-error"
+                        ></div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="{{ form.phone.id_for_label }}">
+                            شماره موبایل
+                        </label>
+
+                        {{ form.phone }}
+
+                        <div
+                                id="phone-error"
+                                class="field-error"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="{{ form.subject.id_for_label }}">
+                        موضوع
+                    </label>
+
+                    {{ form.subject }}
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="{{ form.message.id_for_label }}">
+                        پیام
+                    </label>
+
+                    {{ form.message }}
+
+                </div>
+
+
+                <button
+                        type="submit"
+                        class="contact-submit"
+                >
+                    ارسال پیام
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+{% endblock %}

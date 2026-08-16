@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load core_tags %}
+{% block title %}
+    درباره من | مهدی پورپیرعلی
+{% endblock %}
+{% block meta_description %}
+    درباره مهدی پورپیرعلی، برنامه‌نویس جونیور وب و دانشجوی مهندسی کامپیوتر؛ آشنایی با مسیر یادگیری، مهارت‌ها و تجربه او در توسعه وب با Python، Django، HTML، CSS و JavaScript.
+{% endblock %}
+
+{% block content %}
+
+    <section class="about-page page-enter">
+
+        <div class="about-page-header">
+            <h1>{{ about_page.title }}</h1>
+
+            <p>
+                بیشتر با من، مسیر یادگیری و علایقم در برنامه‌نویسی آشنا شوید.
+            </p>
+        </div>
+
+
+        <div class="about-intro">
+
+            <div class="about-image">
+                <img
+                        src="{{ about_page.profile_image.url }}"
+                        alt="مهدی پورپیرعلی">
+            </div>
+
+            <div class="about-intro-content">
+
+                <h2>من مهدی پورپیرعلی هستم.</h2>
+
+                <p>
+                    {{ about_page.short_intro }}
+                </p>
+
+                <div class="about-social-links">
+
+                    {% if about_page.github_link %}
+                        <a
+                                href="{{ about_page.github_link }}"
+                                target="_blank">
+                            GitHub
+                        </a>
+                    {% endif %}
+
+                    {% if about_page.linkedin_link %}
+                        <a
+                                href="{{ about_page.linkedin_link }}"
+                                target="_blank">
+                            LinkedIn
+                        </a>
+                    {% endif %}
+
+                    {% if about_page.telegram_link %}
+                        <a href="{{ about_page.telegram_link }}" target="_blank">
+                            Telegram
+                        </a>
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="about-content">
+
+            <h2>درباره من</h2>
+
+            <div class="about-content-text">
+                {{ about_page.content|persian_digits|safe }}
+            </div>
+
+        </div>
+
+
+        <div class="about-actions">
+
+            <a href="{% url 'projects' %}">
+                مشاهده پروژه‌های من
+            </a>
+
+        </div>
+
+    </section>
+
+{% endblock %}

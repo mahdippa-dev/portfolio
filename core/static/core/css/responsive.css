@@ -1,0 +1,621 @@
+/* =========================================================
+   Tablet
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    /* =========================
+       Hero
+       ========================= */
+    .hero {
+        gap: 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+    }
+
+    .hero-content h2 {
+        font-size: 24px;
+    }
+
+    .hero-description {
+        font-size: 18px;
+    }
+
+    .hero-image img {
+        width: 320px;
+    }
+
+
+    /* =========================
+       Home Projects
+       ========================= */
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* =========================
+       Projects Page
+       ========================= */
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* =========================
+       Skills Page
+       ========================= */
+    .skills-page .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* =========================
+       Header
+       ========================= */
+    .navbar {
+        height: 70px;
+        padding: 0 15px;
+    }
+
+    .logo img {
+        height: 52px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+
+    /* =========================
+       Hero
+       ========================= */
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+
+        margin: 50px auto;
+        gap: 40px;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .hero-image img {
+        width: 280px;
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content h2 {
+        font-size: 22px;
+    }
+
+    .hero-description {
+        font-size: 17px;
+    }
+
+
+    /* =========================
+       Hero Buttons
+       ========================= */
+    .hero-buttons {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero-buttons a {
+        padding: 12px 20px;
+    }
+
+
+    /* =========================
+       Home About
+       ========================= */
+    .about-me {
+        margin: 70px auto;
+        padding: 0 20px;
+    }
+
+
+    /* =========================
+       Home Skills
+       ========================= */
+    .skills {
+        margin: 70px auto;
+        padding: 0 15px;
+    }
+
+    .skills > h2 {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    .skill-category {
+        margin-bottom: 40px;
+    }
+
+    .skill-category h3 {
+        font-size: 20px;
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .skill-card {
+        min-height: 120px;
+        padding: 15px;
+    }
+
+    .skill-card img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .skill-card span {
+        font-size: 16px;
+    }
+
+
+    /* =========================
+       Home Projects
+       ========================= */
+    .projects-section {
+        margin: 70px auto;
+        padding: 0 15px;
+    }
+
+    .projects-section h2 {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-content {
+        padding: 20px;
+    }
+
+    .project-content h3 {
+        font-size: 20px;
+    }
+
+    .project-content p {
+        font-size: 16px;
+    }
+
+
+    /* =========================
+       Footer
+       ========================= */
+    .footer-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .footer-info {
+        max-width: 100%;
+    }
+
+    .footer-links {
+        width: 100%;
+    }
+
+    .social-links {
+        gap: 10px;
+    }
+
+
+    /* =========================
+       Projects Page
+       ========================= */
+    .projects-list {
+        margin: 70px auto;
+    }
+
+    .projects-header h1 {
+        font-size: 32px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* =========================
+       About Page
+       ========================= */
+    .about-page {
+        margin: 70px auto;
+    }
+
+    .about-page-header {
+        margin-bottom: 50px;
+    }
+
+    .about-page-header h1 {
+        font-size: 32px;
+    }
+
+    .about-page-header p {
+        font-size: 16px;
+    }
+
+    .about-intro {
+        grid-template-columns: 1fr;
+        gap: 40px;
+
+        margin-bottom: 70px;
+    }
+
+    .about-image {
+        width: 280px;
+        margin: 0 auto;
+    }
+
+    .about-intro-content {
+        text-align: center;
+    }
+
+    .about-intro-content h2 {
+        font-size: 25px;
+    }
+
+    .about-social-links {
+        justify-content: center;
+    }
+
+    .about-content > h2 {
+        font-size: 25px;
+    }
+
+    .about-content-text {
+        font-size: 16px;
+    }
+
+
+    /* =========================
+       Skills Page
+       ========================= */
+    .skills-page {
+        margin: 70px auto;
+    }
+
+    .skills-page .skill-category {
+        padding: 20px;
+    }
+
+    .skills-page .skill-category-header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 15px;
+    }
+
+    .skills-page .skill-category-header h2 {
+        font-size: 25px;
+    }
+
+    .skills-page .skills-page-header h1 {
+        font-size: 32px;
+    }
+
+    .skills-page .skills-page-header p {
+        font-size: 16px;
+    }
+
+    .skills-page .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .skills-page .skill-card {
+        min-height: 140px;
+        padding: 18px;
+    }
+
+    .skills-page .skill-card h3 {
+        font-size: 16px;
+    }
+
+
+    /* =========================
+       Contact Page
+       ========================= */
+    .contact-page {
+        margin: 70px auto;
+        padding: 0 15px;
+    }
+
+    .contact-page-header h1 {
+        font-size: 32px;
+    }
+
+    .contact-page-header p {
+        font-size: 16px;
+    }
+
+    .contact-page-info {
+        padding: 20px;
+    }
+
+    .contact-page-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .contact-methods {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .contact-page-form h2 {
+        font-size: 25px;
+    }
+
+
+    /* =========================
+       Project Detail
+       ========================= */
+    .project-detail {
+        margin: 70px auto;
+        padding: 0 15px;
+    }
+
+    .project-detail-header {
+        margin-bottom: 40px;
+    }
+
+    .project-detail-header h1 {
+        font-size: 32px;
+    }
+
+    .project-detail-header p {
+        font-size: 16px;
+    }
+
+    .project-detail-cover {
+        border-radius: 16px;
+        margin-bottom: 45px;
+    }
+
+    .project-detail-content {
+        font-size: 16px;
+        line-height: 1.9;
+        margin-bottom: 60px;
+    }
+
+    .project-detail-content h2 {
+        font-size: 26px;
+        margin-top: 40px;
+    }
+
+    .project-detail-content h3 {
+        font-size: 22px;
+        margin-top: 35px;
+    }
+
+    .project-detail-content h4 {
+        font-size: 19px;
+    }
+
+    .project-detail-content ul,
+    .project-detail-content ol {
+        padding-right: 22px;
+    }
+
+    .project-detail-content table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .project-detail-content pre {
+        padding: 15px;
+        font-size: 13px;
+    }
+
+    .project-detail-actions {
+        flex-direction: column;
+    }
+
+    .project-detail-actions a {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    /* =========================
+       Menu / Hamburger
+       ========================= */
+    .menu-toggle {
+        display: block;
+    }
+
+}
+
+
+/* =========================================================
+   Small Mobile
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    /* =========================
+       Hero
+       ========================= */
+    .hero {
+        margin: 40px auto;
+        gap: 30px;
+    }
+
+    .hero-image img {
+        width: 230px;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+
+    .hero-content h2 {
+        font-size: 20px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+
+    /* =========================
+       Buttons
+       ========================= */
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-buttons a {
+        width: 100%;
+        padding: 12px;
+    }
+
+
+    /* =========================
+       Home Skills
+       ========================= */
+    .skills-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .skill-card {
+        min-height: 110px;
+        padding: 12px;
+    }
+
+    .skill-card img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+
+    .skill-card span {
+        font-size: 14px;
+    }
+
+
+    /* =========================
+       Home Projects
+       ========================= */
+    .project-content {
+        padding: 17px;
+    }
+
+    .project-content h3 {
+        font-size: 19px;
+    }
+
+    .project-content p {
+        font-size: 14px;
+    }
+
+
+    /* =========================
+       Projects Page
+       ========================= */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* =========================
+       Skills Page
+       ========================= */
+    .skills-page .skill-category {
+        padding: 15px;
+        border-radius: 18px;
+    }
+
+    .skills-page .skills-grid {
+        gap: 10px;
+    }
+
+    .skills-page .skill-icon img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .skills-page .skill-card {
+        min-height: 140px;
+        padding: 18px;
+    }
+
+    .skills-page .skill-card h3 {
+        font-size: 16px;
+    }
+
+
+    /* =========================
+       Contact Page
+       ========================= */
+    .contact-page-info {
+        border-radius: 14px;
+    }
+
+    .contact-page-item a {
+        word-break: break-word;
+    }
+
+
+    /* =========================
+       Contact Success Message
+       ========================= */
+    .contact-message {
+        top: 90px;
+        right: 15px;
+        left: 15px;
+
+        min-width: auto;
+        max-width: none;
+
+        text-align: center;
+    }
+
+
+    /* =========================
+       Project Detail
+       ========================= */
+    .project-detail-content {
+        font-size: 16px;
+    }
+
+}

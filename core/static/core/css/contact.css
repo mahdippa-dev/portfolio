@@ -1,0 +1,19 @@
+.contact-section {
+    max-width: 900px;
+    margin: 100px auto;
+    padding: 0 20px;
+}
+
+.contact-section h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.contact-description {
+    text-align: center;
+    color: #9ca3af;
+    margin-bottom: 45px;
+    line-height: 1.8;
+}
+

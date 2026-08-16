@@ -1,0 +1,202 @@
+/* =========================
+   Shared Contact Components
+   ========================= */
+
+
+/* =========================
+   Form
+   ========================= */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+    margin-bottom: 8px;
+
+    font-weight: 600;
+}
+
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    background: #111827;
+
+    color: #f9fafb;
+
+    border: 1px solid #374151;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #3b82f6;
+}
+
+
+.form-group textarea {
+    min-height: 150px;
+
+    resize: vertical;
+}
+
+
+/* =========================
+   Email / Phone
+   ========================= */
+
+.contact-methods {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+
+/* =========================
+   Submit Button
+   ========================= */
+
+.contact-submit {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #3b82f6;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.contact-submit:hover {
+    background: #2563eb;
+}
+
+
+/* =========================
+   Form Errors
+   ========================= */
+
+.field-error,
+.form-error {
+    display: none;
+
+    color: #ef4444;
+
+    font-size: 14px;
+
+    margin-top: 8px;
+}
+
+
+.field-error.show,
+.form-error.show {
+    display: block;
+}
+
+
+.form-group ul,
+.contact-form .errorlist {
+    margin-top: 8px;
+
+    padding: 0;
+
+    list-style: none;
+
+    color: #f87171;
+
+    font-size: 14px;
+}
+
+
+.contact-form > .errorlist {
+    margin-bottom: 20px;
+
+    color: #f87171;
+}
+
+
+/* =========================
+   Success Message
+   ========================= */
+
+.contact-message {
+    position: fixed;
+
+    top: 100px;
+    right: 30px;
+
+    min-width: 320px;
+    max-width: 450px;
+
+    padding: 18px 24px;
+
+    border-radius: 14px;
+
+    background: #064e3b;
+    color: #d1fae5;
+
+    border: 1px solid #10b981;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+    font-size: 16px;
+    font-weight: 600;
+
+    z-index: 9999;
+
+    opacity: 0;
+
+    transform: translateY(-20px);
+
+    pointer-events: none;
+
+    transition: opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+
+.contact-message.success {
+    opacity: 1;
+
+    transform: translateY(0);
+}

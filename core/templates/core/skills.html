@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load core_tags %}
+{% block title %}
+    مهارت‌ها | Python، Django، JavaScript و توسعه وب | مهدی پورپیرعلی
+{% endblock %}
+{% block meta_description %}
+    مهارت‌ها و تکنولوژی‌های مورد استفاده مهدی پورپیرعلی در توسعه وب، شامل Python، Django، HTML، CSS، JavaScript، پایگاه
+    داده و ابزارهای توسعه.
+{% endblock %}
+
+{% block content %}
+
+    <section class="skills-page page-enter">
+
+        <div class="skills-page-header">
+
+            <h1>مهارت‌های من</h1>
+
+            <p>
+                تکنولوژی‌ها و ابزارهایی که در مسیر یادگیری و توسعه پروژه‌های وب با آن‌ها کار می‌کنم.
+            </p>
+
+        </div>
+
+
+        <div class="skills-page-content">
+
+            {% for category in categories %}
+
+                <section class="skill-category">
+                    <div class="skill-category-header">
+
+                        <div>
+                            <h2>{{ category.name }}</h2>
+
+                            {% if category.description %}
+                                <p class="skill-category-description">{{ category.description }}</p>
+                            {% endif %}
+
+                        </div>
+
+                        <span class="skill-count">
+            {{ category.skills.all|length| persian_digits }} مهارت
+        </span>
+
+                    </div>
+                    <div class="skills-grid">
+
+                        {% for skill in category.skills.all %}
+
+                            <article class="skill-card">
+
+                                <div class="skill-icon">
+                                    <img
+                                            src="{{ skill.skill_image.url }}"
+                                            alt="{{ skill.title }}"
+                                            loading="lazy"
+                                    >
+                                </div>
+
+                                <h3>{{ skill.title }}</h3>
+
+                            </article>
+
+                        {% empty %}
+
+                            <p>
+                                هنوز مهارتی در این دسته ثبت نشده است.
+                            </p>
+
+                        {% endfor %}
+
+                    </div>
+
+                </section>
+
+            {% empty %}
+
+                <p>
+                    هنوز دسته‌ای برای مهارت‌ها ثبت نشده است.
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+{% endblock %}

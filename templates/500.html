@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    خطای سرور
+{% endblock %}
+
+{% block content %}
+
+    <section class="error-page">
+
+        <div class="error-content">
+
+            <div class="error-code">
+                500
+            </div>
+
+            <h1>
+                مشکلی در سرور رخ داده است
+            </h1>
+
+            <p>
+                متأسفانه هنگام پردازش درخواست شما مشکلی پیش آمد.
+                لطفاً کمی بعد دوباره تلاش کنید.
+            </p>
+
+            <a href="{% url 'home' %}" class="error-button">
+                بازگشت به صفحه اصلی
+            </a>
+
+        </div>
+
+    </section>
+
+{% endblock %}

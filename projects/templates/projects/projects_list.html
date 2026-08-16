@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    پروژه‌ها | مهدی پورپیرعلی
+{% endblock %}
+
+{% block meta_description %}
+    مجموعه پروژه‌های مهدی پورپیرعلی در زمینه توسعه وب؛ شامل پروژه‌های ساخته‌شده با Python، Django، HTML، CSS و
+    JavaScript و تجربه‌های عملی در ساخت وب‌اپلیکیشن‌های واقعی.
+{% endblock %}
+
+{% block content %}
+
+    <section class="projects-list page-enter">
+
+        <div class="projects-header">
+
+            <h1>پروژه‌های من</h1>
+
+            <p>
+                مجموعه‌ای از پروژه‌های وب که در مسیر یادگیری و توسعه مهارت‌هایم با Python، Django، HTML، CSS و
+                JavaScript ساخته‌ام.
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+            {% for project in projects %}
+
+                <article class="project-card">
+
+                    <div class="project-image">
+
+                        <picture>
+
+                            <source
+                                    media="(max-width: 768px)"
+                                    srcset="{{ project.cover_mobile.url }}"
+                            >
+
+                            <img
+                                    src="{{ project.cover_desktop.url }}"
+                                    alt="{{ project.title }}"
+                                    loading="lazy"
+                            >
+
+                        </picture>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <h2>
+                            {{ project.title }}
+                        </h2>
+
+                        <p>
+                            {{ project.short_description }}
+                        </p>
+
+                        <a href="{% url 'project_detail' project.slug %}">
+                            مشاهده پروژه
+                        </a>
+
+                    </div>
+
+                </article>
+
+            {% empty %}
+
+                <p>
+                    هنوز پروژه‌ای برای نمایش وجود ندارد.
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+{% endblock %}

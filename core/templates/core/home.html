@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load core_tags %}
+{% block title %}
+    مهدی پورپیرعلی | Junior Web Developer
+{% endblock %}
+{% block meta_description %}
+    وب‌سایت شخصی مهدی پورپیرعلی، توسعه‌دهنده جونیور وب با تمرکز بر Python، Django، HTML، CSS و JavaScript و علاقه‌مند به ساخت پروژه‌های واقعی وب.
+{% endblock %}
+{% block extra_head %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Mahdi PPA",
+    "alternateName": "مهدی پورپیرعلی",
+    "url": "{{ request.scheme }}://{{ request.get_host }}"
+}
+</script>
+{% endblock %}
+
+{% block content %}
+    <div id="contact-message" class="contact-message"></div>
+    <section class="hero page-enter">
+        <div class="hero-content">
+            <p class="greeting">سلام👋من</p>
+            <h1>مهدی پورپیرعلی هستم.</h1>
+            <h2>Junior Backend Developer</h2>
+
+            <p class="hero-description">
+                Python & Django Developer <br>
+                علاقه‌مند به ساخت اپلیکیشن‌های وب و در مسیر تبدیل شدن به یک Full Stack Developer
+            </p>
+            <div class="hero-buttons">
+                <a href="{% url 'projects' %}">مشاهده پروژه ها</a>
+                <a href="{% url 'contact' %}">تماس با من</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="{% static 'core/images/IMG_20260706_123654.png' %}" alt="مهدی پورپیرعلی">
+        </div>
+
+    </section>
+
+    <section class="about-me">
+
+        <h2>درباره من</h2>
+        <p>{{ about_me.description|persian_digits }}</p>
+    </section>
+
+    <section class="skills">
+        <h2>مهارت های من</h2>
+        {% for category in categories %}
+            <div class="skill-category">
+                <h3>{{ category.name }}</h3>
+                <div class="skills-container">
+                    {% for skill in category.skills.all %}
+                        {% if skill.displayStatus %}
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <img
+                                            src="{{ skill.skill_image.url }}"
+                                            alt="{{ skill.title }}">
+                                </div>
+
+                                <span>{{ skill.title }}</span>
+
+                            </div>
+                        {% endif %}
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+        {% endfor %}
+
+
+    </section>
+
+    <section class="projects-section">
+
+        <h2>پروژه‌های منتخب</h2>
+
+        <div class="projects-container">
+
+            {% for project in featured_projects %}
+
+                <article class="project-card">
+
+                    <div class="project-image">
+                        <picture>
+                            <source
+                                    media="(max-width: 768px)"
+                                    srcset="{{ project.cover_mobile.url }}"
+                            >
+
+                            <img
+                                    src="{{ project.cover_desktop.url }}"
+                                    alt="{{ project.title }}"
+                            >
+                        </picture>
+                    </div>
+
+                    <div class="project-content">
+
+                        <h3>{{ project.title }}</h3>
+
+                        <p>
+                            {{ project.short_description }}
+                        </p>
+
+                        <a href="{% url 'project_detail' project.slug %}">
+                            مشاهده پروژه
+                        </a>
+
+                    </div>
+
+                </article>
+
+            {% empty %}
+
+                <p>هنوز پروژه‌ای برای نمایش وجود ندارد.</p>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+    <section class="contact-section">
+
+        <h2>تماس با من</h2>
+
+        <p class="contact-description">
+            اگر سوالی دارید یا مایل به همکاری هستید، خوشحال می‌شوم پیام شما را دریافت کنم.
+        </p>
+        <form method="post" class="contact-form" id="contact-form">
+            {% csrf_token %}
+
+            <div class="form-error" id="form-error"></div>
+            <div class="form-group">
+                <label for="{{ form.name.id_for_label }}">
+                    نام
+                </label>
+                {{ form.name }}
+                {{ form.name.errors }}
+            </div>
+
+            <div class="contact-methods">
+
+                <div class="form-group">
+                    <label for="{{ form.email.id_for_label }}">
+                        ایمیل
+                    </label>
+                    {{ form.email }}
+                    <div class="field-error" id="email-error"></div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="{{ form.phone.id_for_label }}">
+                        شماره موبایل
+                    </label>
+                    {{ form.phone }}
+                    <div class="field-error" id="phone-error"></div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.subject.id_for_label }}">
+                    موضوع
+                </label>
+                {{ form.subject }}
+                {{ form.subject.errors }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.message.id_for_label }}">
+                    پیام
+                </label>
+                {{ form.message }}
+                {{ form.message.errors }}
+            </div>
+
+            <button type="submit" class="contact-submit">
+                ارسال پیام
+            </button>
+
+        </form>
+
+    </section>
+{% endblock %}
