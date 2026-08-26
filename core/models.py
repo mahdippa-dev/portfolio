@@ -48,7 +48,7 @@ class Skill(models.Model):
     title = models.CharField(max_length=200, help_text='عنوان مهارت را وارد کنید.', verbose_name='عنوان مهارت')
     skill_image = models.ImageField(verbose_name='تصویر مهارت',
                                     help_text='تصویر مهارت را وارد کنید. حداقل ابعاد 80 * 80 پیکسل (1:1)',
-                                    upload_to='core&contact_page/skills/icons/', )
+                                    upload_to='core/skills/icons/', )
     display_order = models.PositiveIntegerField(
         default=0,
         verbose_name='ترتیب نمایش',

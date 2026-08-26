@@ -12,8 +12,10 @@ __pycache__/
 # Django
 db.sqlite3
 
+
 # User uploaded files
 media/
+media.zip
 
 # Collected static files
 staticfiles/
