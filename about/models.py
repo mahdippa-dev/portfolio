@@ -16,7 +16,7 @@ class AboutPage(models.Model):
     )
 
     profile_image = models.ImageField(
-        upload_to='core&contact_page/about/',
+        upload_to='core/about/',
         verbose_name='تصویر',
         help_text='ابعاد تصویر باید 1500 * 1200 پیکسل (نسبت 4:5) و با ده درصد حاشیه امن باشد.'
     )
