@@ -55,24 +55,16 @@
 
 .mobile-menu {
     position: fixed;
-
     top: 0;
     right: 0;
-
     width: 320px;
     max-width: 85vw;
     height: 100vh;
-
     padding: 25px;
-
     background: #111827;
-
     border-left: 1px solid #2d3748;
-
     z-index: 1001;
-
     transform: translateX(100%);
-
     transition: transform 0.35s ease;
 }
 
@@ -82,12 +74,9 @@
 
 .mobile-menu-header {
     display: flex;
-
     align-items: center;
     justify-content: space-between;
-
     padding-bottom: 20px;
-
     border-bottom: 1px solid #2d3748;
 }
 
@@ -99,19 +88,12 @@
 .menu-close {
     width: 40px;
     height: 40px;
-
     border: none;
-
     background: transparent;
-
     color: #d1d5db;
-
     font-size: 30px;
-
     cursor: pointer;
-
     border-radius: 10px;
-
     transition: 0.3s;
 }
 
@@ -122,23 +104,16 @@
 
 .mobile-nav {
     display: flex;
-
     flex-direction: column;
-
     margin-top: 25px;
 }
 
 .mobile-nav a {
     padding: 16px 10px;
-
     color: #d1d5db;
-
     text-decoration: none;
-
     font-size: 17px;
-
     border-bottom: 1px solid #1f2937;
-
     transition: 0.3s;
 }
 
@@ -149,44 +124,29 @@
 
 .menu-overlay {
     position: fixed;
-
     inset: 0;
-
     background: rgba(0, 0, 0, 0.5);
-
     z-index: 1000;
-
     opacity: 0;
-
     visibility: hidden;
-
     transition: opacity 0.35s ease,
     visibility 0.35s ease;
 }
 
 .menu-overlay.open {
     opacity: 1;
-
     visibility: visible;
 }
 
 .menu-toggle {
     display: none;
-
     border: none;
-
     background: transparent;
-
     color: #d1d5db;
-
     font-size: 28px;
-
     cursor: pointer;
-
     padding: 5px;
-
     border-radius: 8px;
-
     transition: 0.3s;
 }
 

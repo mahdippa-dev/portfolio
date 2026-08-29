@@ -58,12 +58,17 @@
 .social-links a img {
     width: 22px;
     height: 22px;
-    color: #d1d5db;
+    filter: brightness(0) invert(0.85);
+    transition: 0.3s;
 }
 
 .social-links a:hover {
     color: #3b82f6;
     border-color: #3b82f6;
+}
+
+.social-links a:hover img {
+    filter: brightness(0) invert(1);
 }
 
 

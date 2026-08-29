@@ -22,7 +22,6 @@
 .project-detail-header p {
     max-width: 750px;
     margin: 0 auto;
-
     color: #9ca3af;
     font-size: 18px;
     line-height: 1.9;
@@ -36,10 +35,8 @@
 .project-detail-cover {
     width: 100%;
     overflow: hidden;
-
     border-radius: 24px;
     border: 1px solid #2d3748;
-
     margin-bottom: 60px;
 }
 
@@ -57,9 +54,7 @@
 .project-detail-content {
     max-width: 900px;
     margin: 0 auto 80px;
-
     color: #d1d5db;
-
     font-size: 17px;
     line-height: 2;
 }
@@ -71,7 +66,6 @@
 .project-detail-content h2 {
     color: #f9fafb;
     font-size: 28px;
-
     margin-top: 45px;
     margin-bottom: 18px;
 }
@@ -79,7 +73,6 @@
 .project-detail-content h3 {
     color: #f9fafb;
     font-size: 22px;
-
     margin-top: 35px;
     margin-bottom: 15px;
 }
@@ -105,11 +98,9 @@
 .project-detail-content {
     max-width: 900px;
     margin: 0 auto 80px;
-
     color: #d1d5db;
     font-size: 17px;
     line-height: 2;
-
     direction: rtl;
     text-align: right;
 }
@@ -128,7 +119,6 @@
     color: #f9fafb;
     font-size: 30px;
     line-height: 1.5;
-
     margin: 50px 0 20px;
 }
 
@@ -136,7 +126,6 @@
     color: #f9fafb;
     font-size: 24px;
     line-height: 1.6;
-
     margin: 40px 0 18px;
 }
 
@@ -144,7 +133,6 @@
     color: #f9fafb;
     font-size: 20px;
     line-height: 1.6;
-
     margin: 30px 0 15px;
 }
 
@@ -166,9 +154,7 @@
 .project-detail-content a {
     color: #3b82f6;
     text-decoration: none;
-
     border-bottom: 1px solid transparent;
-
     transition: 0.3s;
 }
 
@@ -199,20 +185,14 @@
     font-weight: 700;
 }
 
-
 /* Blockquote */
 
 .project-detail-content blockquote {
     margin: 30px 0;
-
     padding: 20px 25px;
-
     border-right: 4px solid #3b82f6;
-
     background: #0f172a;
-
     color: #9ca3af;
-
     border-radius: 10px;
 }
 
@@ -222,54 +202,38 @@
 .project-detail-content img {
     max-width: 100%;
     height: auto;
-
     display: block;
-
     margin: 30px auto;
-
     border-radius: 16px;
-
     border: 1px solid #2d3748;
 }
 
-
 /* Figure */
-
 .project-detail-content figure {
     margin: 30px 0;
 }
-
 .project-detail-content figcaption {
     margin-top: 10px;
-
     text-align: center;
-
     color: #9ca3af;
     font-size: 14px;
 }
-
 
 /* Horizontal rule */
 
 .project-detail-content hr {
     border: 0;
     border-top: 1px solid #2d3748;
-
     margin: 45px 0;
 }
-
 
 /* Inline code */
 
 .project-detail-content code {
     padding: 3px 7px;
-
     background: #1f2937;
-
     border-radius: 6px;
-
     color: #93c5fd;
-
     font-family: Consolas, monospace;
     font-size: 0.9em;
 }
@@ -279,30 +243,20 @@
 
 .project-detail-content pre {
     overflow-x: auto;
-
     margin: 30px 0;
-
     padding: 20px;
-
     background: #0b1220;
-
     border: 1px solid #2d3748;
-
     border-radius: 12px;
-
     direction: ltr;
     text-align: left;
-
     line-height: 1.7;
 }
 
 .project-detail-content pre code {
     padding: 0;
-
     background: transparent;
-
     color: #e5e7eb;
-
     font-size: 14px;
 }
 
@@ -311,22 +265,16 @@
 
 .project-detail-content table {
     width: 100%;
-
     margin: 30px 0;
-
     border-collapse: collapse;
-
     overflow: hidden;
-
     background: #0f172a;
 }
 
 .project-detail-content th,
 .project-detail-content td {
     padding: 12px 15px;
-
     border: 1px solid #2d3748;
-
     text-align: right;
 }
 
@@ -345,12 +293,9 @@
 .project-detail-content video,
 .project-detail-content iframe {
     display: block;
-
     width: 100%;
     max-width: 100%;
-
     margin: 30px auto;
-
     border: 0;
     border-radius: 16px;
 }
