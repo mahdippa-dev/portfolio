@@ -64,3 +64,47 @@ body {
     }
 
 }
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+a,
+label,
+strong,
+.project-btn,
+.hero-buttons a {
+    font-family: 'Vazirmatn', sans-serif !important;
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+}
+
+button,
+a,
+label,
+strong,
+.project-btn,
+.hero-buttons a {
+    font-weight: 700;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
