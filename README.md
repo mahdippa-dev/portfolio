@@ -14,13 +14,11 @@ The website is powered by Django, with dynamic content managed through the Djang
 * 💻 Dynamic skills and skill categories
 * 🚀 Project showcase
 * 🖼️ Responsive project images for desktop and mobile
-* 📝 Blog structure
 * 📩 Contact section
 * ⚙️ Django Admin Panel for content management
 * 🌙 Responsive and modern UI
 * 📱 Mobile-friendly design
 * 🔍 SEO-friendly structure
-* 🌐 Persian and English content support
 
 ## 🛠️ Technologies
 
