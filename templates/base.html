@@ -100,7 +100,7 @@
             <li><a href="{% url 'contact' %}">تماس</a></li>
         </ul>
         <div class="action">
-            <button class="menu-toggle" id="menu-toggle" aria-label="باز کردن منو" aria-expanded="false">
+            <button class="menu-toggle" id="menu-toggle" aria-label="باز کردن منو" aria-expanded="false" aria-controls="mobile-menu">
                 ☰
             </button>
         </div>
@@ -154,9 +154,11 @@
         class="menu-overlay"
         id="menu-overlay"
 ></div>
+<main>
 {% block content %}
 
 {% endblock %}
+</main>
 <footer class="footer">
 
     <div class="footer-container">
@@ -173,23 +175,26 @@
             <div class="social-links">
                 <a href="{{ footer_info.github_link }}"
                    target="_blank"
+                   rel="noopener noreferrer"
                    aria-label="GitHub">
                     <img src="{% static 'core/icons/github.svg' %}" alt="">
                 </a>
 
                 <a href="{{ footer_info.linkedin_link }}"
                    target="_blank"
+                   rel="noopener noreferrer"
                    aria-label="LinkedIn">
                     <img src="{% static 'core/icons/linkedin.svg' %}" alt="">
                 </a>
                 {% if footer_info.email %}
-                    <a href="mailto:{{ footer_info.email }}" target="_blank" aria-label="Email">
+                    <a href="mailto:{{ footer_info.email }}" target="_blank" rel="noopener noreferrer" aria-label="Email">
                         <img src="{% static 'core/icons/email.svg' %}" alt="">
                     </a>
                 {% endif %}
                 {% if footer_info.instagram_link %}
                     <a href="{{ footer_info.instagram_link }}"
                        target="_blank"
+                       rel="noopener noreferrer"
                        aria-label="Instagram">
                         <img src="{% static 'core/icons/instagram.svg' %}" alt="">
                     </a>
@@ -198,6 +203,7 @@
                 {% if footer_info.telegram_link %}
                     <a href="{{ footer_info.telegram_link }}"
                        target="_blank"
+                       rel="noopener noreferrer"
                        aria-label="Telegram">
                         <img src="{% static 'core/icons/telegram.svg' %}" alt="">
                     </a>
@@ -206,6 +212,7 @@
                 {% if footer_info.iranian_social_link %}
                     <a href="{{ footer_info.iranian_social_link }}"
                        target="_blank"
+                       rel="noopener noreferrer"
                        aria-label="شبکه اجتماعی داخلی">
                         <!-- آیکون سرویس ایرانی را بعداً اینجا می‌گذاریم -->
                     </a>
@@ -224,7 +231,7 @@
     </div>
 
 </footer>
-<script src="{% static 'core/js/menu.js' %}"></script>
-<script src="{% static 'core/js/contact.js' %}"></script>
+<script src="{% static 'core/js/menu.js' %}" defer></script>
+<script src="{% static 'core/js/contact.js' %}" defer></script>
 </body>
 </html>
