@@ -3,6 +3,39 @@ from django.db import models
 
 # Create your models here.
 
+class WorkStatus(models.Model):
+    STATUS_CHOICES = [
+        ('available', 'آماده پذیرش پروژه'),
+        ('busy', 'مشغول انجام پروژه'),
+        ('unavailable', 'فعلاً در دسترس نیستم'),
+    ]
+
+    status = models.CharField(
+        max_length=20,
+        choices=STATUS_CHOICES,
+        default='available',
+        verbose_name='وضعیت'
+    )
+
+    message = models.CharField(
+        max_length=255,
+        blank=True,
+        verbose_name='پیام'
+    )
+
+    updated_at = models.DateTimeField(
+        auto_now=True,
+        verbose_name='آخرین بروزرسانی'
+    )
+
+    def __str__(self):
+        return self.get_status_display()
+
+    class Meta:
+        verbose_name = 'وضعیت کاری'
+        verbose_name_plural = 'وضعیت کاری'
+
+
 class About(models.Model):
     title = models.CharField(max_length=200, verbose_name='عناون نمایشی در پنل ادمین')
     description = models.TextField(max_length=2000, verbose_name='متن توضیحات',

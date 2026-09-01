@@ -1,7 +1,16 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import SkillCategory, About, Skill, Footer
+from .models import SkillCategory, About, Skill, Footer, WorkStatus
+
+
+@admin.register(WorkStatus)
+class WorkStatusAdmin(admin.ModelAdmin):
+    list_display = ('status', 'message', 'updated_at')
+
+    def has_add_permission(self, request):
+        # فقط اگر هیچ رکوردی وجود نداشت اجازه ساخت بده
+        return not WorkStatus.objects.exists()
 
 
 @admin.register(About)

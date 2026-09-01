@@ -152,4 +152,280 @@
     font-weight: 400;
 }
 
+/* =========================================
+   Work Status Section
+========================================= */
+
+.work-status-section {
+    width: 100%;
+    margin: 80px 0;
+    padding: 0 20px;
+}
+
+.work-status-container {
+    max-width: 900px;
+    margin: 0 auto;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding: 30px 35px;
+    border: 1px solid #2d3748;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    text-align: center;
+}
+
+.work-status-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.status-label {
+    display: block;
+    font-size: 15px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+}
+
+.work-status-content h2 {
+    margin: 0 0 8px;
+    font-size: 24px;
+}
+
+.work-status-content p {
+    margin: 0;
+    color: #d1d5db;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* =========================================
+   Work Status Lamp
+========================================= */
+.status-lamp {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    transition: color 0.3s ease,
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* =========================================
+   SVG
+========================================= */
+
+.status-lamp svg {
+    width: 58px;
+    height: 58px;
+    overflow: visible;
+}
+
+
+/* =========================================
+   Lamp Bulb
+========================================= */
+
+.lamp-bulb {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: fill 0.3s ease,
+    stroke 0.3s ease;
+}
+
+
+/* =========================================
+   Lamp Base
+========================================= */
+
+.lamp-base {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 3;
+    stroke-linecap: round;
+    transition: stroke 0.3s ease;
+}
+
+
+/* =========================================
+   Lamp Glow
+========================================= */
+
+.lamp-glow {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    opacity: 0;
+}
+
+
+/* =========================================
+   🟢 AVAILABLE
+========================================= */
+
+.status-lamp.status-available {
+    color: #facc15;
+    animation: availableLamp 2.5s ease-in-out infinite;
+}
+
+
+.status-lamp.status-available .lamp-bulb {
+    fill: rgba(250, 204, 21, 0.12);
+}
+
+
+.status-lamp.status-available .lamp-glow {
+    opacity: 0.25;
+    animation: glowAvailable 2.5s ease-in-out infinite;
+}
+
+
+/* Lamp movement */
+
+@keyframes availableLamp {
+
+    0%,
+    100% {
+        transform: scale(1);
+
+        filter: drop-shadow(
+                0 0 4px rgba(250, 204, 21, 0.35)
+        );
+    }
+
+    50% {
+        transform: scale(1.05);
+        filter: drop-shadow(
+                0 0 18px rgba(250, 204, 21, 0.8)
+        );
+    }
+}
+
+
+/* Lamp glow */
+
+@keyframes glowAvailable {
+
+    0%,
+    100% {
+        opacity: 0.15;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+
+/* =========================================
+   🟠 BUSY
+========================================= */
+
+.status-lamp.status-busy {
+    color: #f59e0b;
+    animation: busyLamp 1.8s ease-in-out infinite;
+}
+
+
+.status-lamp.status-busy .lamp-bulb {
+    fill: rgba(245, 158, 11, 0.08);
+}
+
+
+.status-lamp.status-busy .lamp-glow {
+    opacity: 0.15;
+    animation: glowBusy 1.8s ease-in-out infinite;
+}
+
+
+/* Busy animation */
+
+@keyframes busyLamp {
+
+    0%,
+    100% {
+        opacity: 1;
+
+        filter: drop-shadow(
+                0 0 10px rgba(245, 158, 11, 0.6)
+        );
+    }
+
+    50% {
+        opacity: 0.45;
+
+        filter: drop-shadow(
+                0 0 2px rgba(245, 158, 11, 0.15)
+        );
+    }
+}
+
+
+@keyframes glowBusy {
+
+    0%,
+    100% {
+        opacity: 0.15;
+    }
+
+    50% {
+        opacity: 0.35;
+    }
+}
+
+
+/* =========================================
+   🔴 UNAVAILABLE
+========================================= */
+
+.status-lamp.status-unavailable {
+    color: #ef4444;
+
+    opacity: 0.45;
+}
+
+
+.status-lamp.status-unavailable .lamp-bulb {
+    fill: rgba(239, 68, 68, 0.04);
+}
+
+
+.status-lamp.status-unavailable .lamp-glow {
+    opacity: 0;
+}
+
+
+/* =========================================
+   ♿ Accessibility
+========================================= */
+
+/*
+   کاربرانی که انیمیشن را غیرفعال کرده‌اند،
+   انیمیشن‌های غیرضروری را نمی‌بینند.
+*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    .status-lamp,
+    .status-lamp.status-available,
+    .status-lamp.status-busy,
+    .status-lamp.status-unavailable,
+    .status-lamp .lamp-glow {
+        animation: none !important;
+        transition: none;
+    }
+}
+
 

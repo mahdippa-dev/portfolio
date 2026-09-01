@@ -5,18 +5,19 @@
     مهدی پورپیرعلی | Junior Web Developer
 {% endblock %}
 {% block meta_description %}
-    وب‌ سایت شخصی مهدی پورپیرعلی، توسعه‌ دهنده جونیور وب با تمرکز بر Python، Django، HTML، CSS و JavaScript و علاقه ‌مند به ساخت پروژه‌ های واقعی وب.
+    وب‌ سایت شخصی مهدی پورپیرعلی، توسعه‌ دهنده جونیور وب با تمرکز بر Python، Django، HTML، CSS و JavaScript و علاقه ‌مند
+    به ساخت پروژه‌ های واقعی وب.
 {% endblock %}
 {% block extra_head %}
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Mahdi PPA",
-    "alternateName": "مهدی پورپیرعلی",
-    "url": "{{ request.scheme }}://{{ request.get_host }}"
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Mahdi PPA",
+            "alternateName": "مهدی پورپیرعلی",
+            "url": "{{ request.scheme }}://{{ request.get_host }}"
 }
-</script>
+    </script>
 {% endblock %}
 
 {% block content %}
@@ -41,6 +42,55 @@
         </div>
 
     </section>
+    {% if work_status %}
+        <section class="work-status-section">
+            <div class="work-status-container">
+                <div class="status-lamp status-{{ work_status.status }}">
+                    <svg viewBox="0 0 64 64" aria-hidden="true">
+
+                        <path
+                                class="lamp-bulb"
+                                d="M32 8C21.5 8 13 16.5 13 27c0 7.2 3.8 13.2 9.5 16.9
+               2.1 1.4 3.5 3.7 3.5 6.1h12c0-2.4 1.4-4.7 3.5-6.1
+               C47.2 40.2 51 34.2 51 27 51 16.5 42.5 8 32 8z">
+                        </path>
+
+                        <path
+                                class="lamp-base"
+                                d="M26 50h12M27 55h10">
+                        </path>
+
+                        <circle
+                                class="lamp-glow"
+                                cx="32"
+                                cy="27"
+                                r="24">
+                        </circle>
+
+                    </svg>
+                </div>
+
+                <div class="work-status-content">
+
+            <span class="status-label">
+                وضعیت فعلی من
+            </span>
+
+                    <h2>
+                        {{ work_status.get_status_display }}
+                    </h2>
+
+                    {% if work_status.message %}
+                        <p>
+                            {{ work_status.message }}
+                        </p>
+                    {% endif %}
+
+                </div>
+
+            </div>
+        </section>
+    {% endif %}
 
     <section class="about-me">
 
