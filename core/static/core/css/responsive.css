@@ -619,3 +619,24 @@
     }
 
 }
+
+/* =========================================
+   ♿ Accessibility مربوط به بخش وضعیت من
+========================================= */
+
+/*
+   کاربرانی که انیمیشن را غیرفعال کرده‌اند،
+   انیمیشن‌های غیرضروری را نمی‌بینند.
+*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    .status-lamp,
+    .status-lamp.status-available,
+    .status-lamp.status-busy,
+    .status-lamp.status-unavailable,
+    .status-lamp .lamp-glow {
+        animation: none !important;
+        transition: none;
+    }
+}

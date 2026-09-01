@@ -406,26 +406,18 @@
     opacity: 0;
 }
 
+.hero-animated-text h2,
+.hero-animated-text p {
+    opacity: 0;
+    transform: translateY(15px);
 
-/* =========================================
-   ♿ Accessibility
-========================================= */
-
-/*
-   کاربرانی که انیمیشن را غیرفعال کرده‌اند،
-   انیمیشن‌های غیرضروری را نمی‌بینند.
-*/
-
-@media (prefers-reduced-motion: reduce) {
-
-    .status-lamp,
-    .status-lamp.status-available,
-    .status-lamp.status-busy,
-    .status-lamp.status-unavailable,
-    .status-lamp .lamp-glow {
-        animation: none !important;
-        transition: none;
-    }
+    transition: opacity 0.5s ease,
+    transform 0.5s ease;
 }
 
 
+.hero-animated-text h2.show,
+.hero-animated-text p.show {
+    opacity: 1;
+    transform: translateY(0);
+}
