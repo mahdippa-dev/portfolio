@@ -1,5 +1,6 @@
 from projects.models import Project
 from .models import About, SkillCategory, Skill, WorkStatus
+from about.models import AboutPage
 from contact.forms import ContactMessageForm
 from django.db.models import Prefetch
 from django.shortcuts import render, get_object_or_404
@@ -80,12 +81,14 @@ def home(request):
 
         form = ContactMessageForm()
     workstatus = WorkStatus.objects.first()
+    about_page = AboutPage.objects.first()
     return render(request, 'core/home.html', {
         'about_me': about_me,
         'categories': categories,
         'featured_projects': featured_projects,
         'form': form,
-        'work_status': workstatus
+        'work_status': workstatus,
+        'about_page': about_page,
     })
 
 

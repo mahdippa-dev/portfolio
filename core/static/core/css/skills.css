@@ -85,10 +85,16 @@
     background-color 0.3s ease;
 }
 
-.skill-card:hover {
-    transform: translateY(-7px);
-    border-color: #3b82f6;
-    background: #162033;
+@media (hover: hover) {
+    .skill-card:hover {
+        transform: translateY(-7px);
+        border-color: #3b82f6;
+        background: #162033;
+    }
+
+    .skill-card:hover .skill-icon {
+        transform: scale(1.05);
+    }
 }
 
 .skill-icon {
@@ -105,9 +111,6 @@
     object-fit: contain;
 }
 
-.skill-card:hover .skill-icon {
-    transform: scale(1.05);
-}
 
 .skill-card h3 {
     font-size: 17px;

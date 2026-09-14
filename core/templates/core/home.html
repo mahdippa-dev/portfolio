@@ -30,7 +30,7 @@
 
                 <h2 id="animated-title"></h2>
 
-                <p id="animated-description"></p>
+                <p id="animated-description" class="hero-description"></p>
 
             </div>
             <div class="hero-buttons">
@@ -39,7 +39,7 @@
             </div>
         </div>
         <div class="hero-image">
-            <img src="{% static 'core/images/IMG_20260706_123654.png' %}" alt="مهدی پورپیرعلی">
+            <img src="{{ about_page.profile_image.url }}" alt="مهدی پورپیرعلی">
         </div>
 
     </section>
@@ -77,12 +77,12 @@
                 وضعیت فعلی من
             </span>
 
-                    <h2>
+                    <h2 id="work-status-title">
                         {{ work_status.get_status_display }}
                     </h2>
 
                     {% if work_status.message %}
-                        <p>
+                        <p id="work-status-message">
                             {{ work_status.message }}
                         </p>
                     {% endif %}
@@ -97,6 +97,9 @@
 
         <h2>درباره من</h2>
         <p>{{ about_me.description|persian_digits }}</p>
+        <a href="{% static 'core/files' %}" download class="resume-download-btn">
+            دانلود رزومه
+        </a>
     </section>
 
     <section class="skills">

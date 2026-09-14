@@ -59,3 +59,85 @@ descriptionElement.classList.add("show");
 
 
 setInterval(changeText, 4000);
+
+
+// animation-work-status
+const workStatusTitle = document.getElementById("work-status-title");
+const workStatusMessage = document.getElementById("work-status-message");
+
+if (workStatusTitle) {
+
+    const titleText = workStatusTitle.textContent.trim();
+    const messageText = workStatusMessage
+        ? workStatusMessage.textContent.trim()
+        : "";
+
+    workStatusTitle.textContent = "";
+
+    if (workStatusMessage) {
+        workStatusMessage.textContent = "";
+    }
+
+    let titleIndex = 0;
+    let messageIndex = 0;
+
+
+    function typeTitle() {
+
+        if (titleIndex < titleText.length) {
+
+            workStatusTitle.textContent += titleText[titleIndex];
+
+            titleIndex++;
+
+            setTimeout(typeTitle, 100);
+
+        } else {
+
+            setTimeout(typeMessage, 500);
+
+        }
+    }
+
+
+    function typeMessage() {
+
+        if (!workStatusMessage) {
+            setTimeout(startTyping, 2000);
+            return;
+        }
+
+        if (messageIndex < messageText.length) {
+
+            workStatusMessage.textContent += messageText[messageIndex];
+
+            messageIndex++;
+
+            setTimeout(typeMessage, 60);
+
+        } else {
+
+            setTimeout(startTyping, 3000);
+
+        }
+    }
+
+
+    function startTyping() {
+
+        titleIndex = 0;
+        messageIndex = 0;
+
+        workStatusTitle.textContent = "";
+
+        if (workStatusMessage) {
+            workStatusMessage.textContent = "";
+        }
+
+        typeTitle();
+    }
+
+
+    typeTitle();
+}
+// ********
