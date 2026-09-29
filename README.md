@@ -117,7 +117,7 @@ should be stored in environment variables and should not be committed to the rep
 
 ## 👨‍💻 Author
 
-**Mahdi Pourpirali**
+**Mahdi PourPirAli**
 
 Junior Backend Developer
 Python & Django Developer
