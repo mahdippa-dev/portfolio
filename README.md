@@ -1,12 +1,14 @@
 # 🌐 Personal Portfolio
 
-A personal portfolio website built with **Python and Django** to showcase my skills, projects, experience, and background as a Junior Backend Developer.
+A personal portfolio website built with **Python and Django** to showcase my skills, projects, experience, and background as a **Junior Backend Developer focused on Python and Django**.
 
 ## 🚀 About the Project
 
-This project is my personal developer portfolio, designed to present my programming skills and projects in a clean, responsive, and modern interface.
+This project is my personal developer portfolio, built to present my programming skills, projects, and learning journey through a clean, responsive, and modern interface.
 
-The website is powered by Django, with dynamic content managed through the Django Admin Panel.
+The website is powered by **Django**, with dynamic content managed through the Django Admin Panel.
+
+The main focus of this project is backend development, including server-side logic, database management, content management, and building a maintainable Django-based web application.
 
 ## ✨ Features
 
@@ -22,14 +24,24 @@ The website is powered by Django, with dynamic content managed through the Djang
 
 ## 🛠️ Technologies
 
+### Backend
+
 * **Python**
 * **Django**
 * **PostgreSQL**
+
+### Frontend
+
 * **HTML5**
 * **CSS3**
 * **JavaScript**
+
+### Tools & Libraries
+
 * **CKEditor 5**
 * **Git & GitHub**
+
+> Frontend technologies are used to support the Django application, while my primary focus is backend development with Python and Django.
 
 ## 📁 Project Structure
 
@@ -64,7 +76,7 @@ Create and activate a virtual environment:
 python -m venv .venv
 ```
 
-Windows:
+### Windows
 
 ```bash
 .venv\Scripts\activate
@@ -113,17 +125,16 @@ should be stored in environment variables and should not be committed to the rep
 
 ## 🌍 Live Website
 
-**[mahdippa.ir](https://mahdippa.ir)**
+[**mahdippa.ir**](https://mahdippa.ir/)
 
 ## 👨‍💻 Author
 
 **Mahdi PourPirAli**
 
-Junior Backend Developer
-Python & Django Developer
+Junior Backend Developer focused on **Python & Django**
 
 * GitHub: [@mahdippa-dev](https://github.com/mahdippa-dev)
-* Website: [mahdippa.ir](https://mahdippa.ir)
+* Website: [mahdippa.ir](https://mahdippa.ir/)
 
 ---
 
